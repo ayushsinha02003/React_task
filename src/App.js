@@ -1,18 +1,15 @@
 import './App.css';
-import UserInfoValidationForm from './Components/UserInfoValidationForm';
-import SideBar from './Components/SideBar/SideBar';
+// import SideBar from './Components/SideBar/SideBar';
+import CustomPaginationActionsTable from  './Components/Table/Table.jsx';
 
 function App() {
   return (
     <div>
-    <div className="sidebarContainer">
-    <SideBar/>
-    </div>
-    <div className="formContainer">
-    <UserInfoValidationForm/>
+    <div>
+      <CustomPaginationActionsTable/>
     </div>
     </div>
-  )
+  );
 }
 
 export default App;
