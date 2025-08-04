@@ -103,35 +103,38 @@ export default function CustomPaginationActionsTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-              <TableRow key={row.name} className={styles.tableRow}>
-                <TableCell align="center" className={styles.tableCell}>
-                  <button className={styles.editButton}><EditIcon /></button>
-                  <button className={styles.deleteButton}><DeleteIcon /></button>
-                </TableCell>
-                <TableCell component="th" scope="row" className={styles.tableCell}>
-                  {row.name}
-                </TableCell>
-                <TableCell align="right" className={styles.tableCell}>
-                  {row.calories}
-                </TableCell>
-                <TableCell align="right" className={styles.tableCell}>
-                  {row.fat}
-                </TableCell>
-                <TableCell align="right" className={styles.tableCell}>
-                  {row.carbs}
-                </TableCell>
-                <TableCell align="right" className={styles.tableCell}>
-                  {row.protein}
-                </TableCell>
-                <TableCell align="right" className={styles.tableCell}>
-                  {row.fiber}
-                </TableCell>
-                <TableCell align="right" className={styles.tableCell}>
-                  {row.sodium}
-                </TableCell>
-              </TableRow>
-            ))}
+            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+              const isActive = false; // Determine if the row is active
+              return (
+                <TableRow key={row.name} className={`${styles.tableRow} ${isActive ? styles.activeRow : ''}`}>
+                  <TableCell align="center" className={styles.tableCell}>
+                    <button className={styles.editButton}><EditIcon /></button>
+                    <button className={styles.deleteButton}><DeleteIcon /></button>
+                  </TableCell>
+                  <TableCell component="th" scope="row" className={styles.tableCell}>
+                    {row.name}
+                  </TableCell>
+                  <TableCell align="right" className={styles.tableCell}>
+                    {row.calories}
+                  </TableCell>
+                  <TableCell align="right" className={styles.tableCell}>
+                    {row.fat}
+                  </TableCell>
+                  <TableCell align="right" className={styles.tableCell}>
+                    {row.carbs}
+                  </TableCell>
+                  <TableCell align="right" className={styles.tableCell}>
+                    {row.protein}
+                  </TableCell>
+                  <TableCell align="right" className={styles.tableCell}>
+                    {row.fiber}
+                  </TableCell>
+                  <TableCell align="right" className={styles.tableCell}>
+                    {row.sodium}
+                  </TableCell>
+                </TableRow>
+              );
+            })}
             {emptyRows > 0 && (
               <TableRow style={{ height: 40 * emptyRows }}>
                 <TableCell colSpan={8} />
