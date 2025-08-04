@@ -24,9 +24,10 @@
 
 .tableRow {
   height: 40px !important;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
   &:hover {
     background: #e3f2fd;
+    box-shadow: 0 4px 18px 0 rgba(33, 150, 243, 0.10);
   }
 }
 
@@ -36,12 +37,34 @@
   border-bottom: 1px solid #e0e0e0;
   color: #374151;
   background: transparent;
+  transition: background 0.2s, font-size 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background: #bbdefb;
+    color: #1565c0;
+    font-size: 1.13rem;
+    box-shadow: 0 2px 8px 0 #90caf9;
+    z-index: 2;
+  }
 }
 
 .tableHead .tableCell {
   color: #fff;
   font-weight: 600;
   border-bottom: 2px solid #1976d2;
+}
+
+// Header cell hover effect
+.tableheader .tableCell {
+  transition: background 0.2s, color 0.2s, font-size 0.2s, box-shadow 0.2s;
+  &:hover, &:focus {
+    background: #1976d2;
+    color: #fffde7;
+    font-size: 1.18rem;
+    box-shadow: 0 2px 12px 0 #42a5f5;
+    z-index: 3;
+  }
 }
 
 .editButton, .deleteButton {
